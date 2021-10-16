@@ -1,5 +1,5 @@
 # Godot-And-Gaming
-This repo contains the path i have taken to learn little bit about gaming, weekends are fun, but a little time can be use to learn something, I will be dedicating posibbly next few months to learn about gaming from scratch. This repo will contain the resource and the application i have created.
+This repo contains the path i will be taking to learn little bit about gaming, weekends are fun, but a little time can be use to learn something, I will be dedicating posibbly next few months to learn about gaming from scratch. This repo will contain the resource and the application i have created.
 
 Plan: 
 Step 1: Learn about gadot
