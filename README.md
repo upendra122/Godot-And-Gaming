@@ -9,3 +9,6 @@ Step 4: Design nodes in the game
 Step 5: Devlope the game.
 
 The journey begins.........................
+
+Step 1: watching some youtube tutorial and replicating work:
+Tutorial : https://www.youtube.com/watch?v=40q3PWhw5aw&list=PL8ui5HK3oSiHwwXQ7xMj4MokBXhGt7NBq
