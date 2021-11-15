@@ -1,0 +1,98 @@
+[gd_scene load_steps=32 format=2]
+
+[ext_resource path="res://Graphics/Obstacles/kittens/k3.png" type="Texture" id=1]
+[ext_resource path="res://Obstacles/Obstacle.gd" type="Script" id=2]
+[ext_resource path="res://Graphics/Obstacles/couch/c4.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Obstacles/kittens/k1.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Obstacles/maru/m2.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Obstacles/family1/3.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/Obstacles/maru/m4.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Obstacles/pile/p2.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Obstacles/pile/p4.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/Obstacles/Sloth/s4.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/Obstacles/couch/c2.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/Obstacles/couch/c3.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/Obstacles/pizza/p3.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/Obstacles/couch/c1.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/Obstacles/kittens/k4.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/Obstacles/maru/m1.png" type="Texture" id=16]
+[ext_resource path="res://Graphics/Obstacles/pizza/p1.png" type="Texture" id=17]
+[ext_resource path="res://Graphics/Obstacles/family1/2.png" type="Texture" id=18]
+[ext_resource path="res://Graphics/Obstacles/kittens/k2.png" type="Texture" id=19]
+[ext_resource path="res://Graphics/Obstacles/pile/p1.png" type="Texture" id=20]
+[ext_resource path="res://Graphics/Obstacles/pizza/p4.png" type="Texture" id=21]
+[ext_resource path="res://Graphics/Obstacles/Sloth/s2.png" type="Texture" id=22]
+[ext_resource path="res://Graphics/Obstacles/maru/m3.png" type="Texture" id=23]
+[ext_resource path="res://Graphics/Obstacles/pizza/p2.png" type="Texture" id=24]
+[ext_resource path="res://Graphics/Obstacles/family1/4.png" type="Texture" id=25]
+[ext_resource path="res://Graphics/Obstacles/family1/1.png" type="Texture" id=26]
+[ext_resource path="res://Graphics/Obstacles/Sloth/s1.png" type="Texture" id=27]
+[ext_resource path="res://Graphics/Obstacles/pile/p3.png" type="Texture" id=28]
+[ext_resource path="res://Graphics/Obstacles/Sloth/s3.png" type="Texture" id=29]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 20 ), ExtResource( 8 ), ExtResource( 28 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "pile",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 18 ), ExtResource( 6 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "family",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 5 ), ExtResource( 23 ), ExtResource( 7 ) ],
+"loop": true,
+"name": "maru",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 24 ), ExtResource( 13 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "pizza",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "couch",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 22 ), ExtResource( 29 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "sloth",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 19 ), ExtResource( 1 ), ExtResource( 15 ) ],
+"loop": true,
+"name": "kittens",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 84.1276
+height = 69.7526
+
+[node name="Obstacle" type="Area2D"]
+position = Vector2( 1408.26, 521.019 )
+collision_layer = 4
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "kittens"
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -4.32825, 0.229065 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -5.03967, -2.14577e-05 )
+scale = Vector2( 12.5913, 8.9375 )
+
+[connection signal="body_entered" from="." to="." method="_on_Obstacle_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
